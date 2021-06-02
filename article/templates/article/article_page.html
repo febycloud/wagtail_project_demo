@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-articlepage{% endblock %}
 
 {% block content %}
     <h1>{{ page.title }}</h1>
-    
+    {{page.author_info.title}}
+    {{page.author_info.intro}}
+    {% image page.author_info.author_pic fill-50x50 %}
     {{ page.body|richtext }}
 <p><a href="{{ page.get_parent.url }}">Return</a></p>
 
