@@ -24,4 +24,11 @@ app Article includes aritcle index and article page, you can add/delete in admin
 
 app Author you can add author picture and intros which can be used in article page\
 
+## 	Preview
+\
+Picture can be accessed in Preview folder
+\
+
+	![Aaron Swartz](https://raw.githubusercontent.com/febycloud/wagtail_project_demo/main/preview/Screenshot%202021-06-03%20at%2015-46-16%20A%201000%20day%20Journey%2Cor%20Why%20the%20Digital%20Interface%20Must%20Be%20resilient.png)
+	![Aaron Bwasts](https://raw.githubusercontent.com/febycloud/wagtail_project_demo/main/preview/Screenshot%202021-06-03%20at%2015-45-53%20Wagtail%20-%20Create%20a%20page%20in%20Home.png)
 
