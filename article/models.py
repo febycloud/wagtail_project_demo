@@ -8,6 +8,7 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
 from author.models import AuthorPage
+from home.models import HomePage
 
 # Create your models here.
 class ArticleIndexPage(Page):
@@ -18,8 +19,19 @@ class ArticleIndexPage(Page):
 
 class ArticlePage(Page):
     intro = models.CharField(max_length=250)
+
+    banner=models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.DO_NOTHING,
+    )
+
     body = RichTextField(blank=True)
+
+    head_foot=models.ForeignKey(HomePage,blank=True,null=True,related_name='head_foot',on_delete=DO_NOTHING)
     author_info = models.ForeignKey(AuthorPage,blank=True,null=True,related_name='author_info',on_delete=DO_NOTHING)
+
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
         index.SearchField('body'),
@@ -28,6 +40,8 @@ class ArticlePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('intro'),
         FieldPanel('author_info'),
+        FieldPanel('head_foot'),
+        ImageChooserPanel('banner'),
         FieldPanel('body', classname="full"),
     ]
 

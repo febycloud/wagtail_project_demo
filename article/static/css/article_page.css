@@ -1,0 +1,51 @@
+body{
+    font-family: Georgia, Helvetica, Arial, sans-serif;
+    margin: 50px 50px 50px 50px;
+    text-align: center;
+}
+#title{
+    text-align: center;
+    margin: 50px 50px 50px 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.author{
+    text-align: left;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.authortext{
+    width:300px
+}
+#authorname{
+    font-weight: bold;
+    font-family: Georgia;
+}
+#authorintro{
+    font-style: italic;
+    font-size: x-small;
+}
+.author_foot{
+    text-align: left;
+    margin-left:150px;
+
+}
+#banner{
+margin-top: 20px; 
+margin-bottom: 50px;
+}
+
+#textbody{
+    font-family: Helvetica;
+    font-weight: lighter;
+    text-align: justify;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#footer{
+    font-family: sans-serif;
+    font-style: italic;
+}

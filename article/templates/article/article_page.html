@@ -1,15 +1,40 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags static %}
 
 {% block body_class %}template-articlepage{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/article_page.css' %}"> 
+{% endblock %}
+
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    {{page.author_info.title}}
-    {{page.author_info.intro}}
-    {% image page.author_info.author_pic fill-50x50 %}
-    {{ page.body|richtext }}
-<p><a href="{{ page.get_parent.url }}">Return</a></p>
+<div id="header">{% image page.head_foot.page_header height-64 %}</div>
+
+<h1 id="title">{{ page.title }}</h1>
+
+
+<div class="author" id="authorpic">{% image page.author_info.author_pic fill-50x50 %}</div>
+<div class="author">
+<div class="authortext" id="authorname">{{page.author_info.title}}</div>
+<div class="authortext" id="authorintro">{{page.author_info.intro}}</div>
+</div>
+
+<div id="banner">{% image page.banner height-300 %}</div>
+
+<div id="textbody">   {{ page.body|richtext }}</div>
+
+<div class="author_foot">
+<div class="author">
+<div class="authortext" id="authorname">{{page.author_info.title}}</div>
+<div class="authortext" id="authorintro">{{page.author_info.intro}}</div>
+</div>
+</div>
+
+<div id="footer">
+{{page.head_foot.intro}}
+{% image page.head_foot.page_footer height-64 %}</div>
+
+{% comment %} <div id="returnpage"><p><a href="{{ page.get_parent.url }}">Return</a></p></div> {% endcomment %}
 
 {% endblock %}
